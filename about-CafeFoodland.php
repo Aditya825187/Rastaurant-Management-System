@@ -1,15 +1,13 @@
 <?php
 session_start();
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>CafeFoodland - Categories!</title>
+	<title>CafeFoodland - About!</title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<!-- <meta http-equiv="refresh" content="1"> -->
 
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -38,21 +36,17 @@ session_start();
 	<?php require('chunks/navbar.php'); ?>
 
 
-	<?php require('chunks/banner-slider.php'); ?>
+	<?php require('chunks/carousel.php'); ?>
 
 
+	<?php require('chunks/about-us.php'); ?>
 
 
-	<?php require('chunks/categories.php'); ?>
-
-
-
-
-
-
+	<?php require('chunks/description.php'); ?>
 
 
 	<?php require('chunks/footer.php'); ?>
+
 
 
 
@@ -61,7 +55,7 @@ session_start();
 	  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
 	  crossorigin="anonymous"></script>
 
-    
+    <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
     <script src="js/loaders.js"></script>

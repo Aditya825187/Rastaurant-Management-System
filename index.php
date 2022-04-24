@@ -1,78 +1,96 @@
 <?php
 session_start();
+$msg_error='';
+if(isset($_SESSION['msg']))
+{
+    $msg_error=$_SESSION['msg'];
+    unset($_SESSION['msg']);
+}
+
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Cafe Foodland - The Perfect Food at Your Door!</title>
-
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<!-- <meta http-equiv="refresh" content="1"> -->
-
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-	<link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
-
-	<link href="https://fonts.googleapis.com/css?family=Bree+Serif&display=swap" rel="stylesheet">
-
-
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-	<link rel="stylesheet" href="css/style.css">
-	<!--https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css-->
-	
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/form-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
+    <title>Admin</title>
 </head>
 <body>
 
-	<?php require('chunks/login-modal.php'); ?>
+
+    <div class="login-page section">
+        <div class="center-align">
+            <div class="row">
+
+            <div class="col s12">
+
+                <div class="container">
+                    <div class="container">
+                        <div class="container">
+                            <div class="card horizontal hoverable">
+
+                                <div class="card-stacked">
+                                    <form class="card-content" action="login-admin.php" method="post">
+                                        <h4 class="header">Admin Login</h4>
+
+                                        <?php
+
+                                            if(!empty($msg_error)){
+                                                echo '<div class="row error-msg">
+                                                            <div class="col">
+                                                                <b>'.$msg_error.'</b>
+                                                            </div>
+                                                        </div>';
+
+                                            }
+                                        ?>
+
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <span for="email"><b>Email</b></span>
+                                                <input name="email" id="email" type="email" class="validate">
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                            <span for="email"><b>Password</b></span>
+                                                <input id="password" name="password" type="password" class="validate">
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col s12">
+                                                <button type="submit"  class="waves-effect waves-light btn"><b>Log In</b></button>
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
 
 
-	<?php require('chunks/register-modal.php'); ?>
-
-
-	<?php require('chunks/info-modal.php'); ?>
-
-
-	<?php require('chunks/navbar.php'); ?>
-
-
-	<?php require('chunks/banner-slider.php'); ?>
-
-
-	<?php //require('chunks/description.php'); ?>
-
-
-	<?php require('chunks/cards.php'); ?>
-
-
-	<?php require('chunks/carousel.php'); ?>
-
-
-	<?php //require('chunks/about.php'); ?>
-
-
-	<?php require('chunks/services.php'); ?>
-
-
-	<?php require('chunks/reviews.php'); ?>
-
-
-	<?php require('chunks/footer.php'); ?>
+            </div>
 
 
 
 
-	<script
-	  src="https://code.jquery.com/jquery-3.4.1.min.js"
-	  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-	  crossorigin="anonymous"></script>
 
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            </div>
+        </div>
+    </div>
 
-    <script src="js/loaders.js"></script>
-    <script src="js/ajax.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.js"></script>
 </body>
 </html>
